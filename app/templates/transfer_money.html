@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pul O'tkazish</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px; /* Space for fixed navbar */
+        }
+        .transfer-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .transfer-form h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff; /* Bootstrap primary color */
+        }
+        .transfer-form label {
+            font-weight: bold;
+            color: #495057; /* Bootstrap gray color */
+        }
+        .transfer-form input[type="text"],
+        .transfer-form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da; /* Bootstrap input border color */
+            border-radius: 4px;
+        }
+        .transfer-form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .transfer-form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .transfer-form .message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="transfer-form">
+            <h3>Pul O'tkazish</h3>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="from_username">From Username:</label>
+                    <input type="text" id="from_username" name="from_username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="balance">How much transfer money:</label>
+                    <input type="number" id="balance" name="balance" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="to_username">To Username:</label>
+                    <input type="text" id="to_username" name="to_username" class="form-control" required>
+                </div>
+                <input type="submit" value="Transfer" class="btn btn-primary">
+
+            </form>
+            {% if message %}
+            <h4><p class="message">{{ message }}</p></h4>
+            {% endif %}
+            <br><a href="{{ url_for('user_menu') }}" class="btn btn-primary">Back to User Menu</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

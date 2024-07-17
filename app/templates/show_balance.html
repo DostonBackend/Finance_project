@@ -1,0 +1,171 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>User Page</title>-->
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">-->
+<!--    &lt;!&ndash; Custom CSS &ndash;&gt;-->
+<!--    <style>-->
+<!--        body {-->
+<!--            background-color: #f8f9fa;-->
+<!--        }-->
+<!--        .show-balance {-->
+<!--            max-width: 600px;-->
+<!--            margin: 50px auto;-->
+<!--            padding: 20px;-->
+<!--            background-color: #ffffff;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--        }-->
+<!--        .show-balance h3 {-->
+<!--            text-align: center;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
+<!--        .show-balance label {-->
+<!--            font-weight: bold;-->
+<!--        }-->
+<!--        .show-balance input {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            border-radius: 4px;-->
+<!--            border: 1px solid #ced4da;-->
+<!--        }-->
+<!--        .show-balance button {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            background-color: #007bff;-->
+<!--            color: #ffffff;-->
+<!--            border: none;-->
+<!--            border-radius: 4px;-->
+<!--            cursor: pointer;-->
+<!--            transition: background-color 0.3s;-->
+<!--        }-->
+<!--        .show-balance button:hover {-->
+<!--            background-color: #0056b3;-->
+<!--        }-->
+<!--        .show-balance p {-->
+<!--            text-align: center;-->
+<!--            color: green;-->
+<!--        }-->
+<!--        .show-balance .balance-info {-->
+<!--            text-align: center;-->
+<!--            font-size: 18px;-->
+<!--            color: green;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="show-balance">-->
+<!--        <h3>Show Balance</h3>-->
+<!--        <form method="post">-->
+<!--            <label for="username">Username:</label>-->
+<!--            <input type="text" id="username" name="username" required><br>-->
+<!--            <button type="submit">Show Balance</button>-->
+<!--        </form>-->
+
+
+<!--        {% if balance %}-->
+<!--            <div class="balance-info">-->
+<!--&lt;!&ndash;                <p>Username: {{ username }}</p>&ndash;&gt;-->
+<!--                <br><h3>Balance: {{ balance }}</h3>-->
+<!--            </div>-->
+<!--        {% endif %}-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Bootstrap JS and dependencies &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .show-balance {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .show-balance h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .show-balance label {
+            font-weight: bold;
+        }
+        .show-balance input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+        .show-balance button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Added margin-top for spacing */
+        }
+        .show-balance button:hover {
+            background-color: #0056b3;
+        }
+        .show-balance p {
+            text-align: center;
+            color: green;
+        }
+        .show-balance .balance-info {
+            text-align: center;
+            font-size: 18px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="show-balance">
+        <h3>Show Balance</h3>
+        <form method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <button type="submit">Show Balance</button>
+        </form>
+
+        {% if balance %}
+            <div class="balance-info">
+                <br><h3>Balance: {{ balance }}</h3>
+            </div>
+        {% endif %}
+
+        <!-- Button to return to user menu -->
+<!-- Button to return to user menu -->
+    <br><a href="{{ url_for('user_menu') }}" class="btn btn-primary">Back to User Menu</a>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

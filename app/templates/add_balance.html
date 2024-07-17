@@ -1,0 +1,106 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Add Balance</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--      <h1>Add Balance</h1>-->
+<!--    <form method="post">-->
+<!--        <label>Username:</label>-->
+<!--        <label>-->
+<!--            <input type="text" name="username" required>-->
+<!--        </label><br>-->
+<!--        <label>Balance:</label>-->
+<!--        <label>-->
+<!--            <input type="number" name="balance" required>-->
+<!--        </label><br>-->
+<!--        <button type="submit">Add Balance</button>-->
+<!--    </form>-->
+<!--     {% if message %}-->
+<!--        <p>{{ message }}</p>-->
+<!--    {% endif %}-->
+<!--</body>-->
+<!--</html>-->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Balance</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .add-balance {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .add-balance h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .add-balance label {
+            font-weight: bold;
+        }
+        .add-balance input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+        .add-balance button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-balance button:hover {
+            background-color: #218838;
+        }
+        .add-balance p {
+            text-align: center;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="add-balance">
+        <h1>Add Balance</h1>
+        <form method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="balance">Balance:</label>
+            <input type="number" id="balance" name="balance" required><br>
+            <button type="submit">Add Balance</button>
+        </form>
+        {% if message %}
+            <br><h3><p>{{ message }}</p></h3>
+        {% endif %}
+
+    <br><a href="{{ url_for('user_menu') }}" class="btn btn-primary">Back to User Menu</a>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
